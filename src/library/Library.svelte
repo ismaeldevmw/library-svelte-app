@@ -5,6 +5,8 @@
 	import Button from '../common/Button.svelte'
 	import { httpGet } from '../common/api.js'
 
+	export let onClick;
+
 	let books = []
 	onMount(async function() {
 		const { data } = await httpGet("/?_sort=id&_order=desc");
@@ -41,4 +43,4 @@
 </p>
 
 <Button>+ Add Book</Button>
-<BookGrid books={books}></BookGrid>
+<BookGrid books={books} {onClick}></BookGrid>
