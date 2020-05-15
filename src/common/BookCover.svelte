@@ -5,7 +5,7 @@
 		return url && /http.+\.(jpg|png|gif)$/.test(url);
 	}
 
-	const handleClick = () => alert('clicked book')
+	const handleClick = (id) => alert(`clicked book ${id}`);
 </script>
 
 <style>
@@ -99,7 +99,8 @@
 <a 
 	href="#" 
 	class="book book--interactive book--variation-{book.variation} {isValidUrl(book.cover) ? 'book--cover' : 'book--no-cover'}"
-	on:click={handleClick}>
+	on:click={() => handleClick(book.id)}>
+	<!-- on:click={handleClick.bind(null, book.id)}> -->
 	<span class="cover" style={isValidUrl(book.cover) ? 'background-image: url(' + book.cover + ')' : ''}>
 		<span class="title">{book.title || ''}</span>
 		<span class="author">{book.author || ''}</span>
