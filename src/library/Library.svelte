@@ -1,5 +1,5 @@
 <script>
-
+	import Button from '../common/Button.svelte'
 </script>
 
 <style>
@@ -29,3 +29,5 @@
 	This is a library for the people. Read the books here. Be inspired. Go Home,
 	and share them with your family.
 </p>
+
+<Button>+ Add Book</Button>
