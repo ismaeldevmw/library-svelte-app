@@ -1,5 +1,5 @@
 <script>
-	import BookGrid from '../BookGrid.svelte'
+	import BookGrid from './BookGrid.svelte'
 	import Button from '../common/Button.svelte'
 
 const books = [
