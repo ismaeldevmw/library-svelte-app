@@ -15,6 +15,10 @@
 		const { data } = await httpGet("/" + id);
 		book = data;
 	});
+
+	function handleFavoriteClick() {
+		console.log('click favorite')
+	}
 </script>
 
 <style>
@@ -45,7 +49,7 @@
 	<div class="cover">
 		<BookCover {book} />
 		<div class="favorite">
-		<Button>{book.favorite ? 'Unfavorite' : 'Favorite'}</Button>
+		<Button on:click={handleFavoriteClick}>{book.favorite ? 'Unfavorite' : 'Favorite'}</Button>
 		</div>
 	</div>
 	<div>
