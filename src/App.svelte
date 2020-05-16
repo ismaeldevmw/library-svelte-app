@@ -27,7 +27,7 @@
 
 <main>
 	{#if page === 'detail'}
-		<Detail />
+		<Detail {...pageArgs} />
 	{:else}
 		<Library on:book-select={handleBookSelect} />
 	{/if}
