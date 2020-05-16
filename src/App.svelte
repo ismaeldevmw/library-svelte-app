@@ -1,8 +1,12 @@
 <script>
+	import Detail from './detail/Detail.svelte'
 	import Library from './library/Library.svelte'
 
+	let page = 'library'
+	let pageArgs = {}
 	function handleBookSelect(event) {
-		console.log("clicked", event.detail.id)
+		page = 'detail'
+		pageArgs = event.detail
 	}
 </script>
 
@@ -22,5 +26,9 @@
 </style>
 
 <main>
-	<Library on:book-select={handleBookSelect} />
+	{#if page === 'detail'}
+		<Detail />
+	{:else}
+		<Library on:book-select={handleBookSelect} />
+	{/if}
 </main>
