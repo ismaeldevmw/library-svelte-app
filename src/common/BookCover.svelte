@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte'
 
 	export let book = {};
+	export let interactive = false;
 
 	const dispatch = createEventDispatcher();
 
@@ -100,14 +101,29 @@
 	}
 </style>
 
-<a 
-	href="#" 
-	class="book book--interactive book--variation-{book.variation} {isValidUrl(book.cover) ? 'book--cover' : 'book--no-cover'}"
-	on:click={() => dispatch('book-select', { id: book.id } )}>
-	<!-- on:click={() => onClick(book.id)} -->
-	<!-- on:click={handleClick.bind(null, book.id)}> -->
-	<span class="cover" style={isValidUrl(book.cover) ? 'background-image: url(' + book.cover + ')' : ''}>
-		<span class="title">{book.title || ''}</span>
-		<span class="author">{book.author || ''}</span>
-	</span>
-</a>
+{#if interactive}
+	<a 
+		href="#" 
+		class="book book--interactive book--variation-{book.variation} {isValidUrl(book.cover) ? 'book--cover' : 'book--no-cover'}"
+		on:click={() => dispatch('book-select', { id: book.id } )}>
+		<!-- on:click={() => onClick(book.id)} -->
+		<!-- on:click={handleClick.bind(null, book.id)}> -->
+		<span class="cover" style={isValidUrl(book.cover) ? 'background-image: url(' + book.cover + ')' : ''}>
+			<span class="title">{book.title || ''}</span>
+			<span class="author">{book.author || ''}</span>
+		</span>
+	</a>
+{:else}
+	<div
+		class="book book--variation-{book.variation}
+		{isValidUrl(book.cover) ? 'book--cover' : 'book--no-cover'}">
+		<div
+			class="cover"
+			style={isValidUrl(book.cover) ? 'background-image: url(' + book.cover + ')' : ''}>
+			<header>
+			<h2 class="title">{book.title || ''}</h2>
+			</header>
+			<div class="author">{book.author || ''}</div>
+		</div>
+	</div>
+{/if}
