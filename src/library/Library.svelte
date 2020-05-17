@@ -41,4 +41,4 @@
 </p>
 
 <Button>+ Add Book</Button>
-<BookGrid books={books} on:book-select />
+<BookGrid books={books} />
