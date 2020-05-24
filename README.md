@@ -1,25 +1,15 @@
 ![svelte library app](https://user-images.githubusercontent.com/13697123/82756260-c1339c00-9d9e-11ea-87e0-fe4c3cd33777.PNG)
 
-# svelte app
+# Svelte library app
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
+This is a simple project of an library app where you can persist books into a local fake database(db.json), in general i learned basic concepts of svelte components, interactivity uis and bind forms data. This project is part of the Pluralsight platform course entitled "Svelte getting started"
 
 ## Get started
 
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd library-svelte-app
 npm install
 ```
 
