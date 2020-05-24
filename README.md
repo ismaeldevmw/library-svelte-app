@@ -1,6 +1,4 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
-
----
+![svelte library app](https://user-images.githubusercontent.com/13697123/82756260-c1339c00-9d9e-11ea-87e0-fe4c3cd33777.PNG)
 
 # svelte app
 
