@@ -2,7 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "run-p dev:server dev:client",
+    "build": "sirv public --single",
     "dev": "run-p dev:server dev:client",
     "dev:client": "rollup -c -w",
     "dev:server": "json-server --watch db.json",
